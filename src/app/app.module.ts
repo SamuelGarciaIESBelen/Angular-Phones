@@ -4,15 +4,15 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
-import { CartComponent } from './cart/cart.component';
+import { TopBarComponent } from './component/top-bar/top-bar.component';
+import { ProductListComponent } from './component/product-list/product-list.component';
+import { ProductAlertsComponent } from './component/product-alerts/product-alerts.component';
+import { ProductDetailsComponent } from './component/product-details/product-details.component';
+import { CartComponent } from './component/cart/cart.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { ShippingComponent } from './shipping/shipping.component';
-
-
+import { ShippingComponent } from './component/shipping/shipping.component';
+import { ProviderListComponent } from './component/provider-list/provider-list.component';
+import { ProviderDetailsComponent } from './component/provider-details/provider-details.component';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -21,7 +21,7 @@ import { ShippingComponent } from './shipping/shipping.component';
         ProductAlertsComponent,
         ProductDetailsComponent,
         CartComponent,
-        ShippingComponent
+        ShippingComponent,  
     ],
     bootstrap: [
         AppComponent
@@ -32,6 +32,8 @@ import { ShippingComponent } from './shipping/shipping.component';
             { path: 'products/:productId', component: ProductDetailsComponent },
             { path: 'cart', component: CartComponent },
             { path: 'shipping', component: ShippingComponent },
+            { path: 'providers', component: ProviderListComponent },
+            { path: 'providers/:providerId', component: ProviderDetailsComponent },
         ])], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
 

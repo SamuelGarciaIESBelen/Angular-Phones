@@ -1,0 +1,11 @@
+<h2>Providers</h2>
+
+@for (provider of providers; track provider.id) {
+<div>
+    <h3>
+        <a [title]="provider.name +' details'" [routerLink]="['/providers', provider.id]">
+            {{ provider.name }}
+        </a>
+    </h3>
+</div>
+}

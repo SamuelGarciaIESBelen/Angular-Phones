@@ -4,5 +4,12 @@
   <h3>{{ product.name }}</h3>
   <h4>{{ product.price | currency }}</h4>
   <p>{{ product.description }}</p>
+  <div *ngIf="provider">
+    <p>
+      <a [title]="provider.name +' details'" [routerLink]="['/providers', provider.id]">
+        {{ provider.name }}
+      </a>
+    </p>
+  </div>
   <button type="button" (click)="addToCart(product)">Add</button>
 </div>

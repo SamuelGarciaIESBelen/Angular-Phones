@@ -1,0 +1,14 @@
+<h2>Provider Details</h2>
+@if (provider) {
+<div>
+  <h3>{{ provider.name }}</h3>
+  <div *ngFor="let product of products">
+    <a [title]="product.name +' details'" [routerLink]="['/products', product.id]">
+      {{ product.name }}
+    </a>
+    <p>{{ product.description }} </p>
+  </div>
+</div>
+} @else {
+<p>No provider found</p>
+}
