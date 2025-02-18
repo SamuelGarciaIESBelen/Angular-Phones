@@ -7,12 +7,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartService {
   
-  items : Product[] = [];
+  items: {product: Product, cantidad: number}[] = [];
 
   constructor(private http: HttpClient) { }
 
   addToCart(product: Product) {
-    this.items.push(product);
+    const existingItem = this.items.find(item => item.product.id === product.id);
+
+    if (existingItem) {
+      existingItem.cantidad++;
+    } else {
+      this.items.push({ product, cantidad: 1 });
+    }
   }
 
   getItems() {
@@ -29,6 +35,6 @@ export class CartService {
   }
 
   getTotalPrice() {
-    return this.items.reduce((acc, cur) => acc + cur.price, 0)
+    return this.items.reduce((acc, cur) => acc + cur.product.price, 0)
   }
 }
