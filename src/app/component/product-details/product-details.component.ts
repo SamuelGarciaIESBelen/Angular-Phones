@@ -5,6 +5,7 @@ import { CartService } from '../../service/cart.service';
 
 import { Provider } from '../../model/providers';
 import { ProviderService } from '../../service/provider.service';
+import { ObservableService } from '../../service/observable.service';
 
 @Component({
     selector: 'app-product-details',
@@ -15,7 +16,9 @@ import { ProviderService } from '../../service/provider.service';
 export class ProductDetailsComponent {
 
   cartService: CartService = inject(CartService);
+  observableService: ObservableService = inject(ObservableService);
   providerService: ProviderService = inject(ProviderService);
+  
   product: Product | undefined;
   provider: Provider | undefined;
   
@@ -35,5 +38,7 @@ export class ProductDetailsComponent {
   addToCart(product : Product) {
     this.cartService.addToCart(product);
     window.alert('Product added to the cart');
+    
+    this.observableService.sumarCarrito();
   }
 }

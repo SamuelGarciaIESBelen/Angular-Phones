@@ -9,6 +9,14 @@
   <span>{{ item.price | currency }}</span>
 </div>
 
+<select [(ngModel)]="ship" (change)="actualizarTotal()" name="shipping" id="shipping">
+  @for (ship of shippingCosts; track $index) {
+    <option value="{{ship.price}}">{{ship.type}} - {{ship.price}}</option>
+  }
+</select>
+
+<h4>Total: ${{ total }}</h4>
+
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="name">

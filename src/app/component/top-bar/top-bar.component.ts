@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ObservableService } from '../../service/observable.service';
 
 @Component({
     selector: 'app-top-bar',
@@ -7,12 +8,16 @@ import { Component } from '@angular/core';
     standalone: false
 })
 export class TopBarComponent {
+    
+    private observableService: ObservableService = inject(ObservableService);
+    
+    numCarrito = 0;
 
+    constructor() {}
+
+    ngOnInit() {
+        this.observableService.countCarrito$.subscribe(count => {
+            this.numCarrito = count;
+        });
+    }
 }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/

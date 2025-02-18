@@ -4,4 +4,8 @@
 
 <a class="button fancy-button" [routerLink]="['/providers']">Proveedores</a>
 
-<a class="button fancy-button" [routerLink]="['/cart']"><em class="material-icons">shopping_cart</em>Checkout</a>
+@if (numCarrito > 0) {
+  <a class="button fancy-button" [routerLink]="['/cart']"><em class="material-icons">shopping_cart</em>Checkout ({{numCarrito}})</a>
+} @else {
+  <a class="button fancy-button" [routerLink]="['/cart']"><em class="material-icons">shopping_cart</em>Checkout</a>
+}

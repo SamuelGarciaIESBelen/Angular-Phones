@@ -1,5 +1,3 @@
-import { Provider } from "./providers";
-
 export interface Product {
   id: number;
   name: string;
