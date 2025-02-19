@@ -1,27 +1,29 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { products } from '../../model/products';
+import { Product } from '../../model/products';
 import { Provider } from '../../model/providers';
 
 import { ProviderService } from '../../service/provider.service';
 
 import { ActivatedRoute } from '@angular/router';
 import { RouterLink } from '@angular/router';
+import { ProductService } from '../../service/product.service';
 
 @Component({
   selector: 'app-provider-details',
+  standalone: true,
   imports: [CommonModule, RouterLink],
-  templateUrl: './provider-details.component.html',
-  styleUrl: './provider-details.component.css'
+  templateUrl: './provider-details.component.html'
 })
 export class ProviderDetailsComponent {
     
   providerService: ProviderService = inject(ProviderService);
+  productService: ProductService = inject(ProductService);
   
   provider: Provider | undefined;
 
-  products = [...products];
+  products: Product[] = [];
 
   constructor(private route: ActivatedRoute) {}
 
@@ -33,6 +35,6 @@ export class ProviderDetailsComponent {
       this.provider = providerList.find(p => p.id === providerIdFromRoute);
     });
 
-    this.products = products.filter(p => p.providerId === providerIdFromRoute);
+    this.productService.getAllProductsOriginales().subscribe(p => this.products = p.filter(p => p.providerId === providerIdFromRoute))
   }
 }

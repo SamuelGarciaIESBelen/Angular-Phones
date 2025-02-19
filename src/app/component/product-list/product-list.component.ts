@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-
-import { products } from '../../model/products';
+import { Component, inject } from '@angular/core';
+import { ProductService } from '../../service/product.service';
+import { Product } from '../../model/products';
 
 @Component({
     selector: 'app-product-list',
@@ -9,7 +9,19 @@ import { products } from '../../model/products';
     standalone: false
 })
 export class ProductListComponent {
-  products = [...products];
+  
+  private productService: ProductService = inject(ProductService);
+  
+  productsOriginales: Product[] = [];
+  productsExamen: Product[] = [];
+  products: Product[] = [];
+
+  constructor() {
+    this.productService.getAllProductsOriginales().subscribe((p: Product[]) => this.productsOriginales = p);
+    this.productService.getAllProductsExamen().subscribe((p: Product[]) => this.productsExamen = p);
+    console.log(this.productsOriginales);
+    console.log(this.productsExamen);
+  }
 
   share() {
     window.alert('The product has been shared');

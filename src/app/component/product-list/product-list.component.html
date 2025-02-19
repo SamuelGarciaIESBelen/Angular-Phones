@@ -1,5 +1,5 @@
 <h2>Products</h2>
-
+<p style="color: red; margin-top: 10px; margin-bottom: 10px;" *ngIf="products.length === 0">El servidor de productos no está operativo</p>
 <div *ngFor="let product of products">
   <h3>
     <a [title]="product.name +' detalles'"

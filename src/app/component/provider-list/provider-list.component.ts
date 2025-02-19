@@ -7,9 +7,9 @@ import { ProviderService } from '../../service/provider.service';
 
 @Component({
   selector: 'app-provider-list',
+  standalone: true,
   imports: [CommonModule, RouterLink],
-  templateUrl: './provider-list.component.html',
-  styleUrl: './provider-list.component.css'
+  templateUrl: './provider-list.component.html'
 })
 export class ProviderListComponent {
   

@@ -6,7 +6,7 @@ export interface Product {
   providerId: number;
 }
 
-export const products = [
+/* export const products = [
   {
     id: 1,
     name: 'Phone XL',
@@ -49,4 +49,4 @@ export const products = [
     description: 'A perfect phone for a programmer',
     providerId: 3
   }
-];
+]; */

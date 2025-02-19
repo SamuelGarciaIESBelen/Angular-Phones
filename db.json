@@ -1,0 +1,91 @@
+{
+    "originales": [
+        {
+            "id": 1,
+            "name": "Phone XL",
+            "price": 799,
+            "description": "A large phone with one of the best screens",
+            "providerId": 1
+        },
+        {
+            "id": 2,
+            "name": "Phone Mini",
+            "price": 699,
+            "description": "A great phone with one of the best cameras",
+            "providerId": 2
+        },
+        {
+            "id": 3,
+            "name": "Phone Standard",
+            "price": 299,
+            "description": "",
+            "providerId": 3
+        },
+        {
+            "id": 4,
+            "name": "Phone 4",
+            "price": 399,
+            "description": "The fourth phone of its class",
+            "providerId": 2
+        },
+        {
+            "id": 5,
+            "name": "Phone 5",
+            "price": 199,
+            "description": "",
+            "providerId": 1
+        },
+        {
+            "id": 6,
+            "name": "Phone 6",
+            "price": 1199,
+            "description": "A perfect phone for a programmer",
+            "providerId": 3
+        }
+    ],
+    
+    "examen": [
+        {
+            "product_id": 1,
+            "product_name": "Phone examen 1",
+            "cost": 599,
+            "details": "A new phone for the exam",
+            "supplier": 2
+        },
+        {
+            "product_id": 2,
+            "product_name": "Phone examen 2",
+            "cost": 599,
+            "details": "A new phone for the exam",
+            "supplier": 2
+        },
+        {
+            "product_id": 3,
+            "product_name": "Phone examen 3",
+            "cost": 599,
+            "details": "A new phone for the exam",
+            "supplier": 2
+        },
+        {
+            "product_id": 4,
+            "product_name": "Phone examen 4",
+            "cost": 599,
+            "details": "A new phone for the exam",
+            "supplier": 2
+        },
+        {
+            "product_id": 5,
+            "product_name": "Phone examen 5",
+            "cost": 599,
+            "details": "A new phone for the exam",
+            "supplier": 2
+        },
+        {
+            "product_id": 6,
+            "product_name": "Phone examen 6",
+            "cost": 599,
+            "details": "A new phone for the exam",
+            "supplier": 2
+        }
+    ]
+}
